@@ -1,0 +1,3 @@
+<?php //App%255CController%255CHelpers%255CAnalyserCroquette%2523filter
+
+return [PHP_INT_MAX, []];

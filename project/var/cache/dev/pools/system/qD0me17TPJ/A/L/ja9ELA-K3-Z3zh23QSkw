@@ -1,0 +1,303 @@
+<?php //App%255CController%255CSecurityController%2523reset
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone ($p['OpenApi\\Annotations\\Put'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Put')),
+        clone ($p['OpenApi\\Context'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Context')),
+        clone ($p['OpenApi\\Loggers\\DefaultLogger'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Loggers\\DefaultLogger')),
+        clone ($p['OpenApi\\Annotations\\RequestBody'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\RequestBody')),
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone ($p['OpenApi\\Annotations\\JsonContent'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\JsonContent')),
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone ($p['OpenApi\\Annotations\\Property'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Property')),
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\Property'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\Property'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\Property'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone ($p['OpenApi\\Annotations\\Response'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('OpenApi\\Annotations\\Response')),
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\JsonContent'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\Response'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\Response'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+        clone $p['OpenApi\\Annotations\\Response'],
+        clone $p['OpenApi\\Context'],
+        clone $p['OpenApi\\Loggers\\DefaultLogger'],
+    ],
+    null,
+    [
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                '/reset',
+            ],
+            'methods' => [
+                [
+                    'PUT',
+                ],
+            ],
+            'schemes' => [
+                [],
+            ],
+            'name' => [
+                'security_reset',
+            ],
+            'requirements' => [
+                [],
+            ],
+            'options' => [
+                [],
+            ],
+            'defaults' => [
+                [],
+            ],
+            'host' => [
+                null,
+            ],
+            'condition' => [
+                null,
+            ],
+            'priority' => [
+                null,
+            ],
+            'env' => [
+                null,
+            ],
+        ],
+        'stdClass' => [
+            '_context' => [
+                1 => $o[2],
+                4 => $o[5],
+                7 => $o[8],
+                10 => $o[11],
+                13 => $o[14],
+                16 => $o[17],
+                19 => $o[20],
+                22 => $o[23],
+                25 => $o[26],
+                28 => $o[29],
+                31 => $o[32],
+                34 => $o[35],
+            ],
+            'path' => [
+                1 => '/api/v1/reset',
+            ],
+            'tags' => [
+                1 => [
+                    'Securities',
+                ],
+            ],
+            'requestBody' => [
+                1 => $o[4],
+            ],
+            'responses' => [
+                1 => [
+                    $o[22],
+                    $o[28],
+                    $o[31],
+                    $o[34],
+                ],
+            ],
+            'logger' => [
+                2 => $o[3],
+                5 => $o[6],
+                8 => $o[9],
+                11 => $o[12],
+                14 => $o[15],
+                17 => $o[18],
+                20 => $o[21],
+                23 => $o[24],
+                26 => $o[27],
+                29 => $o[30],
+                32 => $o[33],
+                35 => $o[36],
+            ],
+            'filename' => [
+                2 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                5 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                8 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                11 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                14 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                17 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                20 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                23 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                26 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                29 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                32 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+                35 => '/var/www/project/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+            ],
+            'line' => [
+                2 => 1493,
+                5 => 1493,
+                8 => 1493,
+                11 => 1493,
+                14 => 1493,
+                17 => 1493,
+                20 => 1493,
+                23 => 1493,
+                26 => 1493,
+                29 => 1493,
+                32 => 1493,
+                35 => 1493,
+            ],
+            'method' => [
+                2 => 'instantiateAnnotiation',
+                5 => 'instantiateAnnotiation',
+                8 => 'instantiateAnnotiation',
+                11 => 'instantiateAnnotiation',
+                14 => 'instantiateAnnotiation',
+                17 => 'instantiateAnnotiation',
+                20 => 'instantiateAnnotiation',
+                23 => 'instantiateAnnotiation',
+                26 => 'instantiateAnnotiation',
+                29 => 'instantiateAnnotiation',
+                32 => 'instantiateAnnotiation',
+                35 => 'instantiateAnnotiation',
+            ],
+            'class' => [
+                2 => 'DocParser',
+                5 => 'DocParser',
+                8 => 'DocParser',
+                11 => 'DocParser',
+                14 => 'DocParser',
+                17 => 'DocParser',
+                20 => 'DocParser',
+                23 => 'DocParser',
+                26 => 'DocParser',
+                29 => 'DocParser',
+                32 => 'DocParser',
+                35 => 'DocParser',
+            ],
+            'namespace' => [
+                2 => 'Doctrine\\Common\\Annotations',
+                5 => 'Doctrine\\Common\\Annotations',
+                8 => 'Doctrine\\Common\\Annotations',
+                11 => 'Doctrine\\Common\\Annotations',
+                14 => 'Doctrine\\Common\\Annotations',
+                17 => 'Doctrine\\Common\\Annotations',
+                20 => 'Doctrine\\Common\\Annotations',
+                23 => 'Doctrine\\Common\\Annotations',
+                26 => 'Doctrine\\Common\\Annotations',
+                29 => 'Doctrine\\Common\\Annotations',
+                32 => 'Doctrine\\Common\\Annotations',
+                35 => 'Doctrine\\Common\\Annotations',
+            ],
+            'annotations' => [
+                2 => [
+                    $o[1],
+                ],
+                5 => [
+                    $o[4],
+                ],
+                8 => [
+                    $o[7],
+                ],
+                11 => [
+                    $o[10],
+                ],
+                14 => [
+                    $o[13],
+                ],
+                17 => [
+                    $o[16],
+                ],
+                20 => [
+                    $o[19],
+                ],
+                23 => [
+                    $o[22],
+                ],
+                26 => [
+                    $o[25],
+                ],
+                29 => [
+                    $o[28],
+                ],
+                32 => [
+                    $o[31],
+                ],
+                35 => [
+                    $o[34],
+                ],
+            ],
+            '_unmerged' => [
+                4 => [
+                    $o[7],
+                ],
+                22 => [
+                    $o[25],
+                ],
+            ],
+            'request' => [
+                4 => 'Register',
+            ],
+            'description' => [
+                4 => 'Corp de la requete',
+                22 => 'Modification du mot de passe',
+            ],
+            'required' => [
+                4 => true,
+                16 => true,
+                19 => true,
+            ],
+            'properties' => [
+                7 => [
+                    $o[10],
+                    $o[13],
+                    $o[16],
+                    $o[19],
+                ],
+            ],
+            'type' => [
+                10 => 'string',
+                13 => 'string',
+                16 => 'string',
+                19 => 'string',
+            ],
+            'example' => [
+                10 => 'coucou@exemple.com',
+                13 => 'coucou@exemple.com',
+                16 => 'emileA15ans',
+                19 => 'emileA15ans',
+            ],
+            'property' => [
+                10 => 'email',
+                13 => 'newemail',
+                16 => 'password',
+                19 => 'newpassword',
+            ],
+            'response' => [
+                22 => '200',
+                28 => '400',
+                31 => '403',
+                34 => '404',
+            ],
+            'ref' => [
+                25 => '#/components/schemas/Security',
+                28 => '#/components/responses/BadRequest',
+                31 => '#/components/responses/ForBidden',
+                34 => '#/components/responses/NotFound',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

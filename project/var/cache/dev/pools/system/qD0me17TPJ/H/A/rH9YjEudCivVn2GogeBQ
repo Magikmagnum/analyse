@@ -1,0 +1,3 @@
+<?php //App%255CController%255CHelpers%255CCheckHelper%2523validateBoolean
+
+return [PHP_INT_MAX, []];
