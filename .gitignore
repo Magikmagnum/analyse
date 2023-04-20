@@ -1,0 +1,22 @@
+
+/.env.local
+/.env.*.local
+/.env.*.local.php
+
+# Fichiers Symfony à ignorer
+/app/bootstrap.php.cache
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+!var/cache/.gitkeep
+!var/logs/.gitkeep
+!var/sessions/.gitkeep
+
+# Fichiers de configuration à ignorer
+/app/config/parameters.yml
+/app/config/parameters.yml.dist
+
+# Autres fichiers Symfony à ignorer
+/bin/*
+/vendor/*
+/web/bundles/*
