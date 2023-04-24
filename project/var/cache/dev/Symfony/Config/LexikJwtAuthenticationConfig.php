@@ -5,6 +5,7 @@ namespace Symfony\Config;
 require_once __DIR__.\DIRECTORY_SEPARATOR.'LexikJwtAuthentication'.\DIRECTORY_SEPARATOR.'EncoderConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'LexikJwtAuthentication'.\DIRECTORY_SEPARATOR.'TokenExtractorsConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'LexikJwtAuthentication'.\DIRECTORY_SEPARATOR.'SetCookiesConfig.php';
+require_once __DIR__.\DIRECTORY_SEPARATOR.'LexikJwtAuthentication'.\DIRECTORY_SEPARATOR.'ApiPlatformConfig.php';
 
 use Symfony\Component\Config\Loader\ParamConfigurator;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
@@ -29,6 +30,7 @@ class LexikJwtAuthenticationConfig implements \Symfony\Component\Config\Builder\
     private $tokenExtractors;
     private $removeTokenFromBodyWhenCookiesUsed;
     private $setCookies;
+    private $apiPlatform;
     private $_usedProperties = [];
 
     /**
@@ -171,7 +173,7 @@ class LexikJwtAuthenticationConfig implements \Symfony\Component\Config\Builder\
     /**
      * @default 'username'
      * @param ParamConfigurator|mixed $value
-     * @deprecated The "lexik_jwt_authentication.user_identity_field" configuration key is deprecated since version 2.15, implement "Symfony\Component\Security\Core\User\UserInterface::getUserIdentifier()" instead.
+     * @deprecated The "lexik_jwt_authentication.user_identity_field" configuration key is deprecated since version 2.16, use "lexik_jwt_authentication.user_id_claim" or implement "Symfony\Component\Security\Core\User\UserInterface::getUserIdentifier()" instead.
      * @return $this
      */
     public function userIdentityField($value): static
@@ -234,6 +236,21 @@ class LexikJwtAuthenticationConfig implements \Symfony\Component\Config\Builder\
         }
 
         return $this->setCookies[$name];
+    }
+
+    /**
+     * API Platform compatibility: add check_path in OpenAPI documentation.
+    */
+    public function apiPlatform(array $value = []): \Symfony\Config\LexikJwtAuthentication\ApiPlatformConfig
+    {
+        if (null === $this->apiPlatform) {
+            $this->_usedProperties['apiPlatform'] = true;
+            $this->apiPlatform = new \Symfony\Config\LexikJwtAuthentication\ApiPlatformConfig($value);
+        } elseif (0 < \func_num_args()) {
+            throw new InvalidConfigurationException('The node created by "apiPlatform()" has already been initialized. You cannot pass values the second time you call apiPlatform().');
+        }
+
+        return $this->apiPlatform;
     }
 
     public function getExtensionAlias(): string
@@ -333,6 +350,12 @@ class LexikJwtAuthenticationConfig implements \Symfony\Component\Config\Builder\
             unset($value['set_cookies']);
         }
 
+        if (array_key_exists('api_platform', $value)) {
+            $this->_usedProperties['apiPlatform'] = true;
+            $this->apiPlatform = new \Symfony\Config\LexikJwtAuthentication\ApiPlatformConfig($value['api_platform']);
+            unset($value['api_platform']);
+        }
+
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
@@ -385,6 +408,9 @@ class LexikJwtAuthenticationConfig implements \Symfony\Component\Config\Builder\
         }
         if (isset($this->_usedProperties['setCookies'])) {
             $output['set_cookies'] = array_map(function ($v) { return $v->toArray(); }, $this->setCookies);
+        }
+        if (isset($this->_usedProperties['apiPlatform'])) {
+            $output['api_platform'] = $this->apiPlatform->toArray();
         }
 
         return $output;

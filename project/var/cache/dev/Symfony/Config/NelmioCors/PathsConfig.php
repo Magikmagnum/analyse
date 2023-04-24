@@ -19,6 +19,7 @@ class PathsConfig
     private $hosts;
     private $originRegex;
     private $forcedAllowOriginValue;
+    private $skipSameAsOrigin;
     private $_usedProperties = [];
 
     /**
@@ -74,11 +75,11 @@ class PathsConfig
     }
 
     /**
-     * @param ParamConfigurator|list<ParamConfigurator|mixed> $value
+     * @param ParamConfigurator|list<ParamConfigurator|mixed>|mixed $value
      *
      * @return $this
      */
-    public function exposeHeaders(ParamConfigurator|array $value): static
+    public function exposeHeaders(mixed $value): static
     {
         $this->_usedProperties['exposeHeaders'] = true;
         $this->exposeHeaders = $value;
@@ -134,6 +135,19 @@ class PathsConfig
     {
         $this->_usedProperties['forcedAllowOriginValue'] = true;
         $this->forcedAllowOriginValue = $value;
+
+        return $this;
+    }
+
+    /**
+     * @default true
+     * @param ParamConfigurator|bool $value
+     * @return $this
+     */
+    public function skipSameAsOrigin($value): static
+    {
+        $this->_usedProperties['skipSameAsOrigin'] = true;
+        $this->skipSameAsOrigin = $value;
 
         return $this;
     }
@@ -194,6 +208,12 @@ class PathsConfig
             unset($value['forced_allow_origin_value']);
         }
 
+        if (array_key_exists('skip_same_as_origin', $value)) {
+            $this->_usedProperties['skipSameAsOrigin'] = true;
+            $this->skipSameAsOrigin = $value['skip_same_as_origin'];
+            unset($value['skip_same_as_origin']);
+        }
+
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
@@ -228,6 +248,9 @@ class PathsConfig
         }
         if (isset($this->_usedProperties['forcedAllowOriginValue'])) {
             $output['forced_allow_origin_value'] = $this->forcedAllowOriginValue;
+        }
+        if (isset($this->_usedProperties['skipSameAsOrigin'])) {
+            $output['skip_same_as_origin'] = $this->skipSameAsOrigin;
         }
 
         return $output;

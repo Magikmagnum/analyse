@@ -6,7 +6,7 @@ services:
             build: php
             container_name: www_3ptitschats
             ports:
-                  - "8742:80"
+                  - "80:80"
             volumes:
                   - ./php/vhosts:/etc/apache2/sites-enabled
                   - ./:/var/www
