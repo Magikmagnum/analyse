@@ -4,7 +4,7 @@ namespace App\Controller;
 
 
 use App\Repository\ProduitRepository;
-use App\Controller\Helpers\AnalyserCroquette;
+use App\Controller\Helpers\Analyser\AnalyserCroquette;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,8 +28,6 @@ class AnalyseController extends AbstractController
     #[Route('/analyse/{id}', name: 'croquette_analyseOne', methods: "POST"),]
     public function analyseOne($id, Request $request, ProduitRepository $produitRepository): JsonResponse
     {
-        // dd($id);
-
         if ($produit = $produitRepository->findOneBy(['id' => $id])) {
 
             $data = json_decode($request->getContent());
