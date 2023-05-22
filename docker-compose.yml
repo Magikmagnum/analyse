@@ -1,7 +1,6 @@
 version: "3.9"
 
 services:
-
       www:
             build: php
             container_name: www_3ptitschats
@@ -48,9 +47,27 @@ services:
             networks:
                   - dev
 
+      reactapp:
+            build:
+                  context: ./react
+                  dockerfile: Dockerfile
+            container_name: reactapp_3ptitschats
+            ports:
+                  - "3000:3000"
+            volumes:
+                  - ./react:/app
+            environment:
+                  - NODE_ENV=development
+            command: npm start
+            restart: always
+            networks:
+                  - dev
+
 networks:
       dev:
 
 
 volumes:
       db-3ptitschats-data:
+
+
